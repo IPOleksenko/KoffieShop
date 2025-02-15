@@ -1,8 +1,8 @@
 import axios from 'axios';
 import React from 'react';
-import '../css/MainPage.css';
+import '../css/Home.css';
 
-class MainPage extends React.Component {
+class Home extends React.Component {
     state = { products: [] };
 
     componentDidMount() {
@@ -38,4 +38,4 @@ class MainPage extends React.Component {
     }
 }
 
-export default MainPage;
+export default Home;
