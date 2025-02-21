@@ -4,6 +4,8 @@ import '../css/Home.css';
 import Cart from '../Components/Cart';
 import CartHandler from '../Utils/CartHandler';
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 const handleAddToCart = (product) => {
     CartHandler.addToCart(product);
     console.log("Product added to cart", CartHandler.getCart());
@@ -13,7 +15,7 @@ class Home extends React.Component {
     state = { products: [] };
 
     componentDidMount() {
-        axios.get('http://localhost:8000/api/products/')
+        axios.get(`${API_URL}/api/products/`)
         .then(res => {
             this.setState({ products: res.data });
         })

@@ -30,16 +30,16 @@ py run.py
 Prevent changes to sensitive environment files from being tracked:
 
 ```sh
-git update-index --assume-unchanged backend/env/db.env
-git update-index --assume-unchanged backend/env/settings.env
+git update-index --assume-unchanged backend/.env
+git update-index --assume-unchanged frontend/.env
 ```
 
 ### 🔄 Restore Change Tracking
 If you need to track changes again:
 
 ```sh
-git update-index --no-assume-unchanged backend/env/db.env
-git update-index --no-assume-unchanged backend/env/settings.env
+git update-index --no-assume-unchanged backend/.env
+git update-index --no-assume-unchanged frontend/.env
 ```
 
 ## ✍️ Authors
