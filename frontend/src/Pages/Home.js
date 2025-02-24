@@ -16,21 +16,22 @@ class Home extends React.Component {
 
     componentDidMount() {
         axios.get(`${API_URL}/api/products/`)
-        .then(res => {
-            this.setState({ products: res.data });
-        })
-        .catch(err => {
-            console.error("Error loading data:", err);
-        });
+            .then(res => {
+                this.setState({ products: res.data });
+            })
+            .catch(err => {
+                console.error("Error loading data:", err);
+            });
     }
 
     render() { 
         return (
             <>
-            <Cart/>
+                {/* We pass the current list of products to the cart component */}
+                <Cart products={this.state.products} />
                 <div className="products-container">
-                    {this.state.products.map((product, id) => (
-                        <div key={id} className="product-card">
+                    {this.state.products.map((product, index) => (
+                        <div key={index} className="product-card">
                             <img 
                                 src={product.image} 
                                 alt={product.name} 
@@ -41,7 +42,11 @@ class Home extends React.Component {
                                 <p>{product.description}</p>
                                 <p><strong>Price:</strong> ${product.price}</p>
                                 <p><strong>Stock:</strong> {product.stock}</p>
-                                <button onClick={() => handleAddToCart(product)}>Add to Cart</button>
+                                <button 
+                                    onClick={() => handleAddToCart(product)}
+                                    disabled={product.stock === 0}>
+                                    {product.stock === 0 ? "Out of Stock" : "Add to Cart"}
+                                </button>
                             </div>
                         </div>
                     ))}

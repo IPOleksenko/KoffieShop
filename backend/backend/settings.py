@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'payments',
     'products',
     'rest_framework',
     'corsheaders',
@@ -102,6 +103,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-DEFAULT_PRODUCT_IMAGE = os.getenv("DEFAULT_PRODUCT_IMAGE", "")
+FRONTEND_URL= os.getenv("FRONTEND_URL")
+
+DEFAULT_PRODUCT_IMAGE = os.getenv("DEFAULT_PRODUCT_IMAGE")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+STRIPE_SECRET_KEY=os.getenv("STRIPE_SECRET_KEY")

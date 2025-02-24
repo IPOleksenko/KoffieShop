@@ -95,6 +95,16 @@
     background-color: #e85a4f;
 }
 
+.cart-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.buy-button {
+    margin-left: auto;
+}
+
 button[onClick="handleClear"] {
     width: 100%;
     padding: 10px;
