@@ -29,8 +29,8 @@ def create_checkout_session(request):
                 payment_method_types=['card'],
                 line_items=line_items,
                 mode='payment',
-                success_url="http://localhost:3000/success",
-                cancel_url="http://localhost:3000/cancel",
+                success_url=settings.FRONTEND_URL+"/success",
+                cancel_url=settings.FRONTEND_URL+"/cancel",
             )
 
             return JsonResponse({'url': session.url})

@@ -11,7 +11,7 @@ const CheckoutButton = ({ products }) => {
                     : product.price,
             }));
 
-            const response = await fetch('http://localhost:8000/api/create-checkout-session/', {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/api/create-checkout-session/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -38,7 +38,7 @@ const CheckoutButton = ({ products }) => {
 
     return (
         <button onClick={handleCheckout} className="checkout-button">
-            Proceed to Checkout
+            Buy
         </button>
     );
 };
