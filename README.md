@@ -1,6 +1,6 @@
 <table>
   <tr>
-    <td><img src=".git/logo.svg" width="256" alt="logo"></td>
+    <td><img src="frontend/src/logo.svg" width="256" alt="logo"></td>
         <td>
             <h1 style="font-size: 32px;">☕ koffie-shop</h1>
         </td>
