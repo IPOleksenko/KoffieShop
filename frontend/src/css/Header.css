@@ -1,0 +1,32 @@
+.header {
+    background-color: #4b2e2e;
+    color: #f5deb3;
+    font-family: "Georgia", serif;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.logo-icon {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    left: -70px;
+}
+
+.logo {
+    font-size: 36px;
+    font-weight: bold;
+}

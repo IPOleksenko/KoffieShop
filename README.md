@@ -1,4 +1,11 @@
-# ☕ koffie-shop
+<table>
+  <tr>
+    <td><img src=".git/logo.svg" width="256" alt="logo"></td>
+        <td>
+            <h1 style="font-size: 32px;">☕ koffie-shop</h1>
+        </td>
+  </tr>
+</table>
 
 ## 📌 Setup Instructions
 
