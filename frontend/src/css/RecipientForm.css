@@ -1,0 +1,40 @@
+.recipient-form-container {
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    width: 300px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-110%);
+    z-index: 1000;
+  }
+  
+  .form-visible {
+    transform: translateX(0);
+  }
+  
+  .form-hidden {
+    transform: translateX(-110%);
+  }
+  
+  .recipient-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .recipient-form label {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  .recipient-form input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  

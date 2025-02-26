@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import '../css/Home.css';
 import Cart from '../Components/Cart';
+import RecipientForm from '../Components/RecipientForm';
 import CartHandler from '../Utils/CartHandler';
 
 const API_URL = process.env.REACT_APP_API_URL;
@@ -27,6 +28,7 @@ class Home extends React.Component {
     render() { 
         return (
             <>
+            <RecipientForm />
                 {/* We pass the current list of products to the cart component */}
                 <Cart products={this.state.products} />
                 <div className="products-container">

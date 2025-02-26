@@ -105,6 +105,21 @@
     margin-left: auto;
 }
 
+.clear-cart-button {
+    background-color: #ff6f61;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.clear-cart-button:hover {
+    background-color: #e85a4f;
+}
+
 button[onClick="handleClear"] {
     width: 100%;
     padding: 10px;
