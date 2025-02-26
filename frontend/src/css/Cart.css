@@ -1,9 +1,10 @@
+/* Cart container */
 .cart-container {
     position: fixed;
     right: 20px;
     top: 20px;
     width: 300px;
-    background: white;
+    background: #faf3ed;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -25,6 +26,7 @@
     overflow-y: auto;
 }
 
+/* Floating cart button */
 .cart-float-button {
     position: fixed;
     right: 20px;
@@ -32,7 +34,7 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-color: #ff6f61;
+    background-color: #6a4646;
     color: white;
     font-size: 24px;
     border: none;
@@ -41,13 +43,19 @@
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s;
+    transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
 .cart-float-button:hover {
-    background-color: #e85a4f;
+    background-color: #7d5454;
 }
 
+.cart-float-button:active {
+    background-color: #5c3a3a;
+    transform: scale(0.97);
+}
+
+/* Cart item card */
 .cart-item {
     display: flex;
     align-items: center;
@@ -82,20 +90,28 @@
     margin-left: 10px;
 }
 
+/* Buttons inside the cart */
 .cart-item button {
-    background-color: #ff6f61;
+    background-color: #6a4646;
     color: white;
     border: none;
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
 .cart-item button:hover {
-    background-color: #e85a4f;
+    background-color: #7d5454;
 }
 
+.cart-item button:active {
+    background-color: #5c3a3a;
+    transform: scale(0.97);
+}
+
+/* Cart actions */
 .cart-actions {
     display: flex;
     justify-content: space-between;
@@ -106,38 +122,73 @@
     margin-left: auto;
 }
 
+/* Clear cart button */
 .clear-cart-button {
-    background-color: #ff6f61;
+    background-color: #6a4646;
     color: white;
     font-weight: bold;
     padding: 10px 20px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
 .clear-cart-button:hover {
-    background-color: #e85a4f;
+    background-color: #7d5454;
 }
 
+.clear-cart-button:active {
+    background-color: #5c3a3a;
+    transform: scale(0.97);
+}
+
+/* Clear button with onClick */
 button[onClick="handleClear"] {
     width: 100%;
     padding: 10px;
-    background-color: #ff6f61;
+    background-color: #6a4646;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
 button[onClick="handleClear"]:hover {
-    background-color: #e85a4f;
+    background-color: #7d5454;
 }
 
+button[onClick="handleClear"]:active {
+    background-color: #5c3a3a;
+    transform: scale(0.97);
+}
+
+/* Disabled buttons */
+button:disabled {
+    background-color: #c0a8a8;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Headings */
 h3 {
     text-align: center;
     margin-top: 10px;
     font-size: 18px;
+}
+
+input[type="number"]:focus {
+    border-color: #4b2e2e;
+    outline: none;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff9f5;
+    color: #333;
 }

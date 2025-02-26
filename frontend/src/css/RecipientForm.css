@@ -3,7 +3,7 @@
     left: 20px;
     top: 20px;
     width: 300px;
-    background: white;
+    background: #faf3ed;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -20,10 +20,16 @@
     transform: translateX(-110%);
   }
   
-  .recipient-form {
-    display: flex;
-    flex-direction: column;
-  }
+  .recipient-form input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff9f5;
+    color: #333;
+}
+
   
   .recipient-form label {
     margin-bottom: 10px;
@@ -37,4 +43,8 @@
     border: 1px solid #ccc;
     border-radius: 5px;
   }
-  
+
+  .recipient-form input:focus {
+    border-color: #4b2e2e;
+    outline: none;
+}
