@@ -11,6 +11,17 @@ class Product(models.Model):
     image = models.URLField(blank=True, default=settings.DEFAULT_PRODUCT_IMAGE, verbose_name="Image URL")  
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Date Added")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Date Updated")
-
+    stripe_product_id = models.CharField(
+        max_length=100,
+        blank=True, null=True,
+        editable=False,
+        verbose_name="Stripe Product ID"
+    )
+    stripe_price_id = models.CharField(
+        max_length=100,
+        blank=True, null=True,
+        editable=False,
+        verbose_name="Stripe Price ID"
+    )
     def __str__(self):
         return self.name

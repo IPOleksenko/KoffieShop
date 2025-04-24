@@ -2,7 +2,7 @@
   <tr>
     <td><img src="frontend/src/logo.svg" width="256" alt="logo"></td>
         <td>
-            <h1 style="font-size: 32px;">☕ koffie-shop</h1>
+            <h1 style="font-size: 32px;">☕ KoffieShop</h1>
         </td>
   </tr>
 </table>
