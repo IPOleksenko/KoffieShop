@@ -7,17 +7,27 @@ import '../css/Cart.css';
 const Cart = ({ products }) => {
   const [cartItems, setCartItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
-  // Manage visibility of both panels: the cart (on the right) and the form (on the left)
   const [isVisible, setIsVisible] = useState(false);
-  // Initial state for recipient data
-  const [recipientData, setRecipientData] = useState({
-    firstName: '',
-    lastName: '',
-    phone: '',
-    country: '',
-    city: '',
-    email: '',
+
+  // Load recipientData from localStorage on initialization
+  const [recipientData, setRecipientData] = useState(() => {
+    const saved = localStorage.getItem('recipientData');
+    return saved ? JSON.parse(saved) : {
+      firstName: '',
+      lastName: '',
+      phone: '',
+      country: '',
+      city: '',
+      street: '',
+      house: '',
+      email: '',
+    };
   });
+
+  // Save recipientData to localStorage on every change
+  useEffect(() => {
+    localStorage.setItem('recipientData', JSON.stringify(recipientData));
+  }, [recipientData]);
 
   const mergeCartWithProducts = () => {
     if (!products || products.length === 0) return [];
@@ -43,9 +53,7 @@ const Cart = ({ products }) => {
   }, [products]);
 
   useEffect(() => {
-    const updateCart = () => {
-      updateCartState();
-    };
+    const updateCart = () => updateCartState();
     window.addEventListener('cartUpdated', updateCart);
     return () => window.removeEventListener('cartUpdated', updateCart);
   }, [products]);
@@ -69,10 +77,14 @@ const Cart = ({ products }) => {
     updateCartState();
   };
 
-  // Toggle the visibility of both panels with a single button
   const toggleCartVisibility = () => {
     setIsVisible(prev => !prev);
   };
+
+  const minimalCartData = cartItems.map(item => ({
+    id: item.id,
+    quantity: item.quantity
+  }));
 
   return (
     <>
@@ -80,7 +92,6 @@ const Cart = ({ products }) => {
         🛒
       </button>
 
-      {/* Cart panel (right side) */}
       <div className={`cart-container ${isVisible ? 'cart-visible' : 'cart-hidden'}`}>
         <h2>Shopping Cart</h2>
         {cartItems.length === 0 ? (
@@ -113,13 +124,12 @@ const Cart = ({ products }) => {
             <h3>Total Price: ${totalPrice.toFixed(2)}</h3>
             <div className="cart-actions">
               <button onClick={handleClear} className="clear-cart-button">Clear Cart</button>
-              <CheckoutButton products={cartItems} recipientData={recipientData} />
+              <CheckoutButton products={minimalCartData} recipientData={recipientData} />
             </div>
           </>
         )}
       </div>
 
-      {/* Recipient data form (left panel) */}
       <RecipientForm
         isVisible={isVisible}
         recipientData={recipientData}
