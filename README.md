@@ -10,7 +10,7 @@
 ## 📌 Setup Instructions
 
 ### 🔧 Fill Environment Files
-Ensure that all required environment variables are present in both `backend/.env` and `frontend/.env` files before proceeding.
+Ensure that all required environment variables are present in both `env/backend.env` and `env/frontend.env` files before proceeding.
 
 ### 📦 Install Dependencies
 To install all necessary dependencies in a virtual environment, run:
@@ -37,16 +37,16 @@ py run.py
 Prevent changes to sensitive environment files from being tracked:
 
 ```sh
-git update-index --assume-unchanged backend/.env
-git update-index --assume-unchanged frontend/.env
+git update-index --assume-unchanged env/backend.env
+git update-index --assume-unchanged env/frontend.env
 ```
 
 ### 🔄 Restore Change Tracking
 If you need to track changes again:
 
 ```sh
-git update-index --no-assume-unchanged backend/.env
-git update-index --no-assume-unchanged frontend/.env
+git update-index --no-assume-unchanged env/backend.env
+git update-index --no-assume-unchanged env/frontend.env
 ```
 
 ## ✍️ Authors
